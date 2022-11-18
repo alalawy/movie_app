@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "592775490292",
+    "project_id": "movieapp-fa11d",
+    "storage_bucket": "movieapp-fa11d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592775490292:android:f7760140a065444e010ca1",
+        "android_client_info": {
+          "package_name": "com.example.movie_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592775490292-u63g1kg1nkhj1d0pmbfpv38rboveo2t3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.movie_app",
+            "certificate_hash": "a8581358175b6363a748b6eaa42a6085af594259"
+          }
+        },
+        {
+          "client_id": "592775490292-k2lst2vdtqe4te8l8mogqjf0mb9u2i0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2k6us52UBA-JkQMua9ENzI1x0usm8xYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592775490292-k2lst2vdtqe4te8l8mogqjf0mb9u2i0s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "592775490292-d79dv23qi7oqap1evus8mnr0i3c2cmdq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.movieapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592775490292:android:12af3aeada502111010ca1",
+        "android_client_info": {
+          "package_name": "com.mycompany.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592775490292-2bc6ncmfc2pesgbppqftr21151u0cs94.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.movieapp",
+            "certificate_hash": "a8581358175b6363a748b6eaa42a6085af594259"
+          }
+        },
+        {
+          "client_id": "592775490292-k2lst2vdtqe4te8l8mogqjf0mb9u2i0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2k6us52UBA-JkQMua9ENzI1x0usm8xYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592775490292-k2lst2vdtqe4te8l8mogqjf0mb9u2i0s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "592775490292-d79dv23qi7oqap1evus8mnr0i3c2cmdq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.movieapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
