@@ -40,7 +40,7 @@ abstract class MovieTheme {
 
 class LightModeTheme extends MovieTheme {
   late Color primaryColor = const Color(0xFF0000B0);
-  late Color secondaryColor = const Color(0xFF39D2C0);
+  late Color secondaryColor = const Color(0xFFF8D458);
   late Color tertiaryColor = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFFFF5963);
   late Color primaryBackground = const Color(0xFF17181B);

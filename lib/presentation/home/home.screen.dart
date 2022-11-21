@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/infrastructure/theme/theme.dart';
 import 'package:movie_app/presentation/home/widgets/header.dart';
+import 'package:movie_app/presentation/home/widgets/recommend.dart';
 import 'package:movie_app/presentation/home/widgets/search.dart';
 import 'package:movie_app/presentation/home/widgets/sliders.dart';
+import 'package:movie_app/presentation/widgets/my_flutter_app_icons.dart';
 
 import 'controllers/home.controller.dart';
 
@@ -14,9 +16,16 @@ class HomeScreen extends GetView<HomeController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: MovieTheme.of(context).primaryBackground,
-        body: Center(
-          child: Column(
-            children: [const Header(), Search(), Sliders()],
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                const Header(),
+                Search(),
+                const Sliders(),
+                const Recommend()
+              ],
+            ),
           ),
         ),
       ),

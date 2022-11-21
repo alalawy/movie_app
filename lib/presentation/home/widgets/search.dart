@@ -15,7 +15,7 @@ class Search extends StatelessWidget {
         height: 50,
         child: TextFormField(
           controller: controller,
-          autofocus: true,
+          autofocus: false,
           obscureText: false,
           decoration: InputDecoration(
             hintText: 'Search',
@@ -50,7 +50,7 @@ class Search extends StatelessWidget {
             fillColor: Color.fromARGB(255, 47, 47, 52),
             prefixIcon: Icon(
               MovieIcons.ksearchLine,
-              color: MovieTheme.of(context).primaryColor,
+              color: MovieTheme.of(context).secondaryColor,
             ),
           ),
           style: MovieTheme.of(context).bodyText1.override(
