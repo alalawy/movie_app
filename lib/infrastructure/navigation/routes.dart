@@ -4,8 +4,10 @@ class Routes {
     return NAVIGATION;
   }
 
+  static const DETAIL_MOVIE = '/detail-movie';
+  static const FAVORITES = '/favorites';
   static const HOME = '/home';
   static const LOGIN = '/login';
   static const NAVIGATION = '/navigation';
-  static const DETAIL_MOVIE = '/detail-movie';
+  static const PROFILE = '/profile';
 }

@@ -36,5 +36,15 @@ class Nav {
       page: () => DetailMovieScreen(),
       binding: DetailMovieControllerBinding(),
     ),
+    GetPage(
+      name: Routes.FAVORITES,
+      page: () => const FavoritesScreen(),
+      binding: FavoritesControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PROFILE,
+      page: () => const ProfileScreen(),
+      binding: ProfileControllerBinding(),
+    ),
   ];
 }

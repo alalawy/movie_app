@@ -1,5 +1,9 @@
+import 'dart:convert';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:movie_app/infrastructure/navigation/bindings/controllers/controllers_bindings.dart';
 import 'package:movie_app/infrastructure/navigation/routes.dart';
 import 'package:movie_app/presentation/home/home.screen.dart';
@@ -9,10 +13,14 @@ class NavigationController extends GetxController {
   static NavigationController get to => Get.find();
 
   var currentIndex = 0.obs;
+  var box = GetStorage();
 
-  final pages = <String>[Routes.HOME, Routes.LOGIN];
+  var user = ''.obs;
+
+  final pages = <String>[Routes.HOME, Routes.FAVORITES, Routes.PROFILE];
 
   void changePage(int index) {
+    checkUser();
     currentIndex.value = index;
     Get.offNamedUntil(
       pages[index],
@@ -30,18 +38,35 @@ class NavigationController extends GetxController {
         binding: HomeControllerBinding(),
       );
 
-    if (settings.name == Routes.LOGIN)
+    if (settings.name == Routes.FAVORITES)
       // ignore: curly_braces_in_flow_control_structures
       return GetPageRoute(
         settings: settings,
-        page: () => const LoginScreen(),
-        binding: LoginControllerBinding(),
+        page: () => Obx(
+            () => user() == '' ? const LoginScreen() : const FavoritesScreen()),
+        binding: user() == ''
+            ? LoginControllerBinding()
+            : FavoritesControllerBinding(),
+      );
+    if (settings.name == Routes.PROFILE)
+      // ignore: curly_braces_in_flow_control_structures
+      return GetPageRoute(
+        settings: settings,
+        page: () => Obx(
+            () => user() == '' ? const LoginScreen() : const ProfileScreen()),
+        binding: user().isEmpty
+            ? LoginControllerBinding()
+            : ProfileControllerBinding(),
       );
 
     return null;
   }
 
-  final count = 0.obs;
+  checkUser() async {
+    var response = await box.read('user');
+    user.value = response ?? '';
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -56,6 +81,4 @@ class NavigationController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

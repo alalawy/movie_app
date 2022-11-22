@@ -23,25 +23,29 @@ class Search extends StatelessWidget {
             hintStyle:
                 TextStyle(color: MovieTheme.of(context).secondaryBackground),
             enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: MovieTheme.of(context).primaryBackground,
+                width: 1,
+              ),
               borderRadius: BorderRadius.circular(16),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0x00000000),
+              borderSide: BorderSide(
+                color: MovieTheme.of(context).primaryBackground,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(20),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0x00000000),
+              borderSide: BorderSide(
+                color: MovieTheme.of(context).primaryBackground,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(20),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0x00000000),
+              borderSide: BorderSide(
+                color: MovieTheme.of(context).primaryBackground,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(20),
