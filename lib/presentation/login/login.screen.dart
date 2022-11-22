@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -15,12 +16,12 @@ class LoginScreen extends GetView<LoginController> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.network(
+                image: CachedNetworkImageProvider(
                   'https://wallpapers.com/images/hd/best-aesthetic-hd-john-wick-still-dgtne5mx4fzois4r.jpg',
-                ).image)),
+                ))),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -46,8 +47,9 @@ class LoginScreen extends GetView<LoginController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.network(
-                          'https://cdn-teams-slug.flaticon.com/google.jpg',
+                        CachedNetworkImage(
+                          imageUrl:
+                              'https://cdn-teams-slug.flaticon.com/google.jpg',
                           width: 35,
                         ),
                         const SizedBox(width: 20),

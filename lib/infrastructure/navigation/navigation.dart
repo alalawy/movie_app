@@ -43,7 +43,7 @@ class Nav {
     ),
     GetPage(
       name: Routes.PROFILE,
-      page: () => const ProfileScreen(),
+      page: () => ProfileScreen(),
       binding: ProfileControllerBinding(),
     ),
   ];

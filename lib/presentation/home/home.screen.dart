@@ -17,6 +17,7 @@ class HomeScreen extends GetView<HomeController> {
       child: Scaffold(
         backgroundColor: MovieTheme.of(context).primaryBackground,
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Center(
             child: Column(
               children: [

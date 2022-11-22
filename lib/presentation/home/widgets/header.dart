@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -37,8 +38,8 @@ class Header extends StatelessWidget {
               TextH5(text: '  ParasMovie')
             ],
           ),
-          Image.network(
-            'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+          CachedNetworkImage(
+            imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
             width: 50,
           )
         ],

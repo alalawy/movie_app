@@ -33,6 +33,7 @@ class NavigationController extends GetxController {
     if (settings.name == Routes.HOME)
       // ignore: curly_braces_in_flow_control_structures
       return GetPageRoute(
+        transition: Transition.noTransition,
         settings: settings,
         page: () => const HomeScreen(),
         binding: HomeControllerBinding(),
@@ -41,6 +42,7 @@ class NavigationController extends GetxController {
     if (settings.name == Routes.FAVORITES)
       // ignore: curly_braces_in_flow_control_structures
       return GetPageRoute(
+        transition: Transition.noTransition,
         settings: settings,
         page: () => Obx(
             () => user() == '' ? const LoginScreen() : const FavoritesScreen()),
@@ -51,10 +53,11 @@ class NavigationController extends GetxController {
     if (settings.name == Routes.PROFILE)
       // ignore: curly_braces_in_flow_control_structures
       return GetPageRoute(
+        transition: Transition.noTransition,
         settings: settings,
-        page: () => Obx(
-            () => user() == '' ? const LoginScreen() : const ProfileScreen()),
-        binding: user().isEmpty
+        page: () =>
+            Obx(() => user() == '' ? const LoginScreen() : ProfileScreen()),
+        binding: user() == ''
             ? LoginControllerBinding()
             : ProfileControllerBinding(),
       );

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -34,9 +35,9 @@ class DetailMovieScreen extends GetView<DetailMovieController> {
                           color: Colors.grey[900],
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: Image.network(
+                            image: CachedNetworkImageProvider(
                               'https://image.tmdb.org/t/p/w1280${controller.movie().posterPath!}',
-                            ).image,
+                            ),
                           ),
                         ),
                         child: Column(

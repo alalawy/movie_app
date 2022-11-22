@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,9 +60,9 @@ class _SlidersState extends State<Sliders> {
                                       color: Colors.grey[900],
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
-                                        image: Image.network(
+                                        image: CachedNetworkImageProvider(
                                           'https://image.tmdb.org/t/p/w1280${i.backdropPath}',
-                                        ).image,
+                                        ),
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
                                   child: Padding(
