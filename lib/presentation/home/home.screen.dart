@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/infrastructure/theme/theme.dart';
 import 'package:movie_app/presentation/home/widgets/header.dart';
-import 'package:movie_app/presentation/home/widgets/recommend.dart';
+import 'package:movie_app/presentation/home/widgets/top_rated.dart';
 import 'package:movie_app/presentation/home/widgets/search.dart';
 import 'package:movie_app/presentation/home/widgets/sliders.dart';
 import 'package:movie_app/presentation/widgets/my_flutter_app_icons.dart';
@@ -22,8 +22,8 @@ class HomeScreen extends GetView<HomeController> {
               children: [
                 const Header(),
                 Search(),
-                const Sliders(),
-                const Recommend()
+                Sliders(controller: controller),
+                TopRated(controller: controller)
               ],
             ),
           ),

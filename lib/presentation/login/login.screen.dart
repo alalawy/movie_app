@@ -9,16 +9,15 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LoginScreen'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'LoginScreen is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: Image.network(
+            'https://c4.wallpaperflare.com/wallpaper/662/105/81/john-wick-wallpaper-preview.jpg',
+            fit: BoxFit.cover,
+          ).image))),
     );
   }
 }

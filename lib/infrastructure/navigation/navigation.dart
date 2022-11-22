@@ -31,5 +31,10 @@ class Nav {
       page: () => const NavigationScreen(),
       binding: NavigationControllerBinding(),
     ),
+    GetPage(
+      name: Routes.DETAIL_MOVIE,
+      page: () => DetailMovieScreen(),
+      binding: DetailMovieControllerBinding(),
+    ),
   ];
 }

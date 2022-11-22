@@ -12,6 +12,7 @@ class NavigationScreen extends GetView<NavigationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MovieTheme.of(context).primaryBackground,
       body: Navigator(
         key: Get.nestedKey(1),
         initialRoute: Routes.HOME,

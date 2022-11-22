@@ -41,15 +41,17 @@ class TextH9 extends StatelessWidget {
 }
 
 class TextH8 extends StatelessWidget {
-  TextH8({super.key, this.text, this.color, this.weight});
+  TextH8({super.key, this.text, this.color, this.weight, this.align});
   String? text;
   Color? color;
   FontWeight? weight;
+  TextAlign? align;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       '$text',
+      textAlign: align ?? TextAlign.left,
       style: TextStyle(
           fontSize: 16,
           color: color ?? Colors.white,
