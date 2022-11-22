@@ -80,11 +80,7 @@ class DetailMovieScreen extends GetView<DetailMovieController> {
                     Padding(
                       padding: EdgeInsets.all(20),
                       child: Score(
-                          score: controller
-                              .movie()
-                              .voteAverage!
-                              .toStringAsFixed(1),
-                          count: '${controller.movie().voteCount}'),
+                          data: controller.movie(), controller: controller),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),

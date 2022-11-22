@@ -17,7 +17,7 @@ class ProfileController extends GetxController {
     loading(context);
     signOutWithGoogle();
     navigation.changePage(0);
-    box.erase();
+    box.remove('user');
     Get.back();
   }
 
@@ -35,6 +35,4 @@ class ProfileController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

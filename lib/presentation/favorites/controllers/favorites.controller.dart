@@ -1,9 +1,27 @@
+import 'dart:math';
+
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:movie_app/data/home/models/popular_movies_model.dart';
 
 class FavoritesController extends GetxController {
-  //TODO: Implement FavoritesController
+  var movies = RxList<Result>([]);
+  final box = GetStorage();
+  dynamic response;
 
-  final count = 0.obs;
+  fetchFavorite() async {
+    var user = box.read('user');
+    movies().clear();
+
+    response = box.read('favorite-$user');
+    print(response);
+    for (var element in response!) {
+      movies().add(element);
+    }
+
+    print(movies().length);
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +36,4 @@ class FavoritesController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

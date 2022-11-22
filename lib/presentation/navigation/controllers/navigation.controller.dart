@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:movie_app/infrastructure/navigation/bindings/controllers/controllers_bindings.dart';
 import 'package:movie_app/infrastructure/navigation/routes.dart';
+import 'package:movie_app/presentation/favorites/controllers/favorites.controller.dart';
 import 'package:movie_app/presentation/home/home.screen.dart';
 import 'package:movie_app/presentation/screens.dart';
 
@@ -15,12 +16,14 @@ class NavigationController extends GetxController {
   var currentIndex = 0.obs;
   var box = GetStorage();
 
+  var favoriteController = Get.put(FavoritesController());
   var user = ''.obs;
 
   final pages = <String>[Routes.HOME, Routes.FAVORITES, Routes.PROFILE];
 
   void changePage(int index) {
     checkUser();
+    favoriteController.fetchFavorite();
     currentIndex.value = index;
     Get.offNamedUntil(
       pages[index],
