@@ -79,8 +79,7 @@ class DetailMovieScreen extends GetView<DetailMovieController> {
                         )),
                     Padding(
                       padding: EdgeInsets.all(20),
-                      child: Score(
-                          data: controller.movie(), controller: controller),
+                      child: Score(data: controller.movie()),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),

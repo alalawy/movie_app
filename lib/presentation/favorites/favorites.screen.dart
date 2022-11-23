@@ -19,7 +19,7 @@ class FavoritesScreen extends GetView<FavoritesController> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              const Header(),
+              Header(),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: Obx(

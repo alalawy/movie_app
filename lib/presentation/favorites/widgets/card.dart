@@ -13,32 +13,46 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Container(
-        child: Row(
-          children: [
-            Container(
-              width: 80,
-              height: 130,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                          'https://image.tmdb.org/t/p/w1280${controller.movies()[index!].backdropPath}'))),
-            ),
-            const SizedBox(width: 20),
-            Column(
-              children: [
-                TextH4(
-                  text: controller.movies()[index!].title,
-                ),
-                TextH6(
-                  text: controller.movies()[index!].popularity.toString(),
-                )
-              ],
-            )
-          ],
+      padding: const EdgeInsets.only(bottom: 15.0),
+      child: InkWell(
+        onTap: () => controller.toDetail(controller.movies()[index!].id),
+        child: Container(
+          width: double.infinity,
+          height: 130,
+          child: Row(
+            children: [
+              Container(
+                width: 80,
+                height: 130,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: CachedNetworkImageProvider(
+                            'https://image.tmdb.org/t/p/w1280${controller.movies()[index!].backdropPath}'))),
+              ),
+              const SizedBox(width: 20),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextH4(
+                    text: controller.movies()[index!].title,
+                  ),
+                  TextH8(
+                    text: controller.movies()[index!].releaseDate.toString(),
+                  ),
+                  TextH8(
+                    text: controller
+                        .movies()[index!]
+                        .overview
+                        .toString()
+                        .substring(0, 40),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

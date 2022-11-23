@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -20,7 +21,33 @@ class ProfileScreen extends GetView<ProfileController> {
         backgroundColor: MovieTheme.of(context).primaryBackground,
         body: Column(
           children: [
-            const Header(),
+            Header(),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: CachedNetworkImageProvider(
+                            controller.box.read('photoURL')))),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: TextH6(
+                text: controller.box.read('displayName'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: TextH8(
+                text: controller.box.read('email'),
+                color: MovieTheme.of(context).secondaryText,
+              ),
+            ),
             Expanded(child: Container()),
             Padding(
               padding: const EdgeInsets.all(20),

@@ -19,7 +19,11 @@ class LoginController extends GetxController {
     var response = await signInWithGoogle(context);
     print('uid : ${response!.uid.toString()}');
     box.write('user', response.uid.toString());
+    box.write('displayName', response.displayName.toString());
+    box.write('email', response.email.toString());
+    box.write('photoURL', response.photoURL.toString());
     navigation.checkUser();
+    navigation.favoriteController.fetchFavorite();
     Get.back();
   }
 

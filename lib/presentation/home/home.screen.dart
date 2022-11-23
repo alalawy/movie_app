@@ -21,7 +21,7 @@ class HomeScreen extends GetView<HomeController> {
           child: Center(
             child: Column(
               children: [
-                const Header(),
+                Header(),
                 Search(),
                 Sliders(controller: controller),
                 TopRated(controller: controller)

@@ -9,6 +9,7 @@ import 'package:movie_app/infrastructure/navigation/routes.dart';
 import 'package:movie_app/presentation/favorites/controllers/favorites.controller.dart';
 import 'package:movie_app/presentation/home/home.screen.dart';
 import 'package:movie_app/presentation/screens.dart';
+import 'package:movie_app/presentation/sqlite/controllers/sqlite_controllers.dart';
 
 class NavigationController extends GetxController {
   static NavigationController get to => Get.find();
@@ -17,6 +18,7 @@ class NavigationController extends GetxController {
   var box = GetStorage();
 
   var favoriteController = Get.put(FavoritesController());
+  var sqliteController = Get.put(SqliteController());
   var user = ''.obs;
 
   final pages = <String>[Routes.HOME, Routes.FAVORITES, Routes.PROFILE];
@@ -75,6 +77,7 @@ class NavigationController extends GetxController {
 
   @override
   void onInit() {
+    sqliteController.openDb();
     super.onInit();
   }
 

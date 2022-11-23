@@ -18,6 +18,9 @@ class ProfileController extends GetxController {
     signOutWithGoogle();
     navigation.changePage(0);
     box.remove('user');
+    box.remove('email');
+    box.remove('displayName');
+    box.remove('photoURL');
     Get.back();
   }
 
