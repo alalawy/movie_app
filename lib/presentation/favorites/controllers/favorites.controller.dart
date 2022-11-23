@@ -24,6 +24,16 @@ class FavoritesController extends GetxController {
         .then((value) => movies.assignAll(sqliteController.movies()));
   }
 
+  addFavorite(Result result) async {
+    await sqliteController.database!.transaction((txn) async {
+      sqliteController
+          .addOrRemoveFavorite(txn, result.id!, result)
+          .then((value) {
+        fetchFavorite();
+      });
+    });
+  }
+
   @override
   void onInit() {
     super.onInit();

@@ -6,6 +6,7 @@ import 'package:movie_app/domain/usecases/get_popular_movies.dart';
 import 'package:movie_app/domain/usecases/get_top_rated_movies.dart';
 import 'package:movie_app/infrastructure/navigation/routes.dart';
 import 'package:movie_app/presentation/detail_movie/controllers/detail_movie.controller.dart';
+import 'package:movie_app/presentation/home/top_rated.screen.dart';
 import 'package:movie_app/presentation/screens.dart';
 
 class HomeController extends GetxController {
@@ -19,7 +20,7 @@ class HomeController extends GetxController {
   late GetTopRatedMoviesUsecase topRatedMoviesUsecase;
   int _currentPage = 1;
   var popularMovies = RxList<Result>([]);
-  var topRatedMovies = RxList<topRated.Result>([]);
+  var topRatedMovies = Rxn<topRated.TopRatedMovies>();
 
   var detailMovieController = Get.find<DetailMovieController>();
 
@@ -33,8 +34,7 @@ class HomeController extends GetxController {
   fetchDataTopRated(int page) async {
     _currentPage = 1;
     final response = await topRatedMoviesUsecase.call(page);
-    response.fold((failure) {},
-        (response) => topRatedMovies.assignAll(response.results!));
+    response.fold((failure) {}, (response) => topRatedMovies.value = response);
   }
 
   @override
@@ -58,5 +58,10 @@ class HomeController extends GetxController {
     detailMovieController.fetchData(id);
     detailMovieController.isLoading.value = true;
     Get.to(() => DetailMovieScreen());
+  }
+
+  void toTopRatedScreen() {
+    fetchDataTopRated(1);
+    Get.to(() => TopRatedMovie());
   }
 }

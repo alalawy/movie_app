@@ -65,40 +65,56 @@ class _SlidersState extends State<Sliders> {
                                         ),
                                       ),
                                       borderRadius: BorderRadius.circular(20)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  color: MovieTheme.of(context)
-                                                      .secondaryColor,
-                                                  borderRadius:
-                                                      BorderRadius.circular(5)),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(5.0),
-                                                child: TextH8(
-                                                  text: 'HD',
-                                                  color: MovieTheme.of(context)
-                                                      .primaryBackground,
-                                                  weight: FontWeight.bold,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(18),
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: [
+                                            Color.fromARGB(0, 0, 0, 0),
+                                            MovieTheme.of(context)
+                                                .primaryBackground
+                                          ],
+                                        )),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                    color:
+                                                        MovieTheme.of(context)
+                                                            .secondaryColor,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5)),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(5.0),
+                                                  child: TextH8(
+                                                    text: 'HD',
+                                                    color:
+                                                        MovieTheme.of(context)
+                                                            .primaryBackground,
+                                                    weight: FontWeight.bold,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        TextH2(
-                                          text: '${i.title}',
-                                          weight: FontWeight.bold,
-                                        )
-                                      ],
+                                            ],
+                                          ),
+                                          TextH2(
+                                            text: '${i.title}',
+                                            weight: FontWeight.bold,
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   )),
                             );

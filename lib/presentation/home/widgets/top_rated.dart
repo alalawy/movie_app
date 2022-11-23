@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:movie_app/infrastructure/theme/theme.dart';
 import 'package:movie_app/presentation/detail_movie/widgets/shimmer.dart';
 import 'package:movie_app/presentation/home/controllers/home.controller.dart';
+import 'package:movie_app/presentation/home/widgets/card.dart';
 import 'package:movie_app/presentation/widgets/button.dart';
 import 'package:movie_app/presentation/widgets/texts.dart';
 
@@ -30,7 +31,7 @@ class TopRated extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: ButtonWidget(
                     text: 'See All',
-                    onPressed: () {},
+                    onPressed: () => controller!.toTopRatedScreen(),
                     options: ButtonOptions(
                       borderRadius: BorderRadius.circular(15),
                       width: 80,
@@ -54,46 +55,21 @@ class TopRated extends StatelessWidget {
               width: double.infinity,
               height: 270,
               child: Obx(
-                () => controller!.topRatedMovies().isNotEmpty
+                () => controller!.topRatedMovies()!.results!.isNotEmpty
                     ? ListView.builder(
                         padding: EdgeInsets.only(left: 20),
                         scrollDirection: Axis.horizontal,
-                        itemCount: controller!.topRatedMovies().length,
+                        itemCount:
+                            controller!.topRatedMovies()!.results!.length,
                         itemBuilder: ((context, index) {
                           return InkWell(
-                            onTap: () => controller!.toDetail(
-                                controller!.topRatedMovies()[index].id),
-                            child: Column(
-                              children: [
-                                Container(
-                                    width: 150,
-                                    height: 200,
-                                    margin: EdgeInsets.symmetric(horizontal: 5),
-                                    decoration: BoxDecoration(
-                                        color: Colors.grey[900],
-                                        image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: CachedNetworkImageProvider(
-                                            'https://image.tmdb.org/t/p/w1280${controller!.topRatedMovies()[index].backdropPath}',
-                                          ),
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(15))),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 20),
-                                  child: SizedBox(
-                                    width: 150,
-                                    child: Center(
-                                      child: TextH8(
-                                        align: TextAlign.center,
-                                        text: controller!
-                                            .topRatedMovies()[index]
-                                            .title,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
+                            onTap: () => controller!.toDetail(controller!
+                                .topRatedMovies()!
+                                .results![index]
+                                .id),
+                            child: TopRatedCard(
+                              controller: controller,
+                              index: index,
                             ),
                           );
                         }))

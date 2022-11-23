@@ -64,13 +64,7 @@ class _ScoreState extends State<Score> {
                         ? MovieTheme.of(context).secondaryColor
                         : MovieTheme.of(context).secondaryBackground,
                   )),
-            ),
-            MovieIconButton(
-                icon: Icon(
-              MovieIcons.kbookmarkLine,
-              size: 28,
-              color: MovieTheme.of(context).secondaryBackground,
-            )),
+            )
           ],
         )
       ],
