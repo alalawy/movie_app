@@ -6,7 +6,7 @@ class Environments {
 }
 
 class ConfigEnvironments {
-  static const String _currentEnvironments = Environments.LOCAL;
+  static const String _currentEnvironments = Environments.PRODUCTION;
   static final List<Map<String, String>> _availableEnvironments = [
     {
       'env': Environments.LOCAL,
@@ -22,7 +22,8 @@ class ConfigEnvironments {
     },
     {
       'env': Environments.PRODUCTION,
-      'url': '',
+      'url': 'https://api.themoviedb.org/3/movie',
+      'apiKey': 'ad70b1a0982af1b93f36caa498f9bf91'
     },
   ];
 
