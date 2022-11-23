@@ -19,9 +19,15 @@ class ProfileScreen extends GetView<ProfileController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: MovieTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          toolbarHeight: 80,
+          title: Header(),
+          backgroundColor: MovieTheme.of(context).primaryBackground,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+        ),
         body: Column(
           children: [
-            Header(),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Container(

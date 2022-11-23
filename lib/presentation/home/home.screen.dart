@@ -16,12 +16,18 @@ class HomeScreen extends GetView<HomeController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: MovieTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          toolbarHeight: 80,
+          title: Header(),
+          backgroundColor: MovieTheme.of(context).primaryBackground,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+        ),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Center(
             child: Column(
               children: [
-                Header(),
                 Search(),
                 Sliders(controller: controller),
                 TopRated(controller: controller)

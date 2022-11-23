@@ -15,11 +15,17 @@ class FavoritesScreen extends GetView<FavoritesController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: MovieTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          toolbarHeight: 80,
+          title: Header(),
+          backgroundColor: MovieTheme.of(context).primaryBackground,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+        ),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              Header(),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: Obx(
